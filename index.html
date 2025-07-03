@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adega do Magrão - Breca não, deixa vim!</title>
+    <meta name="description" content="As melhores bebidas, destilados, combos e o famoso copão de Itajubá. Delivery rápido e preço justo.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/P5g4CjVv/favicon-adega.png">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <!-- Splide.js (Carrossel para Avaliações) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Nosso JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Fundo 3D com Garrafas Flutuantes -->
+    <div class="floating-bottles">
+        <div class="bottle bottle-1"></div>
+        <div class="bottle bottle-2"></div>
+        <div class="bottle bottle-3"></div>
+        <div class="bottle bottle-4"></div>
+    </div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/XqgCm4Zy/489311531-1841418923277558-8365183045267118608-n.jpg" alt="Logo Adega do Magrão">
+                Adega do Magrão
+            </a>
+            <ul class="menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="#quemsomos">Quem Somos</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+            </ul>
+            <a href="https://wa.me/5535984499431" target="_blank" class="btn btn-primary">Pedir no Zap</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="home" class="hero glass-card reveal">
+            <h1>Adega do Magrão</h1>
+            <p class="slogan">Breca não, deixa vim.</p>
+            <p>Sua distribuidora de bebidas em Itajubá. As melhores marcas, combos gelados e o delivery mais rápido da cidade para o seu rolê não parar.</p>
+            <a href="#bebidas" class="btn btn-primary">Ver Produtos <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+        <!-- ==================== BEBIDAS E SERVIÇOS ==================== -->
+        <section id="bebidas" class="section">
+            <h2 class="section-title reveal">O que você encontra aqui?</h2>
+            <div class="bebidas-grid">
+                <div class="item-card glass-card reveal">
+                    <div class="card-header">
+                        <h3>Destilados</h3>
+                        <i class="fa-solid fa-whiskey-glass"></i>
+                    </div>
+                    <p>Jack Daniel's, Red Label, Black Label, White Horse, Tanqueray, Smirnoff e muito mais.</p>
+                </div>
+                <div class="item-card glass-card reveal">
+                    <div class="card-header">
+                        <h3>Copão Montado</h3>
+                        <i class="fa-solid fa-martini-glass-citrus"></i>
+                    </div>
+                    <p>Seu copão de 770ml da sua escolha. Gelado e pronto pra beber!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUEM SOMOS ==================== -->
+        <section id="quemsomos" class="section quemsomos-wrapper glass-card reveal">
+            <div class="quemsomos-foto">
+                <!-- Coloque a foto do Magrão aqui -->
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" alt="Foto do Magrão, dono da adega">
+            </div>
+            <div class="quemsomos-texto">
+                <h2>O Magrão</h2>
+                <p class="cargo">Fundador e Especialista em Bebidas</p>
+                <p class="descricao">Desde o início, a missão da Adega do Magrão é uma só: garantir que ninguém fique na mão. Com uma seleção de bebidas escolhida a dedo e um atendimento que só quem é da cidade oferece, estamos aqui para fazer parte dos seus melhores momentos.</p>
+            </div>
+        </section>
+
+        <!-- ==================== FACHADA ==================== -->
+        <section class="section fachada-container reveal">
+            <div class="fachada-card glass-card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNiVEkOKlMzHLCOoQIsh6eoJLnpLc1G8fvdXYK_=s1360-w1360-h1020-rw" alt="Foto da fachada da Adega do Magrão" class="fachada-image">
+                <div class="fachada-address">
+                    <p><i class="fa-solid fa-location-dot"></i> R. Francisco José Pereira, 37 - Boa Vista, Itajubá - MG, 37505-142</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== AVALIAÇÕES ==================== -->
+        <section id="avaliacoes" class="section">
+            <h2 class="section-title reveal">O que a galera fala</h2>
+            <div class="splide" id="avaliacoes-carousel">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <!-- Avaliação 1 -->
+                        <li class="splide__slide">
+                            <div class="avaliacao-card glass-card">
+                                <div class="avaliacao-header">
+                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1780&auto=format&fit=crop" alt="Foto de perfil">
+                                    <div class="header-info">
+                                        <h4>Lucas Almeida</h4>
+                                        <div class="estrelas">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>"Melhor adega da cidade, sem chance! Preço justo, bebida sempre gelada... Salva demais no fim de semana."</p>
+                            </div>
+                        </li>
+                        <!-- Avaliação 2 -->
+                        <li class="splide__slide">
+                            <div class="avaliacao-card glass-card">
+                                <div class="avaliacao-header">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop" alt="Foto de perfil">
+                                    <div class="header-info">
+                                        <h4>Mariana Costa</h4>
+                                        <div class="estrelas">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>"Atendimento nota 1000! O Magrão sempre dá a maior atenção e os copões são os melhores. Recomendo demais!"</p>
+                            </div>
+                        </li>
+                        <!-- Avaliação 3 -->
+                        <li class="splide__slide">
+                            <div class="avaliacao-card glass-card">
+                                <div class="avaliacao-header">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="Foto de perfil">
+                                    <div class="header-info">
+                                        <h4>Fernando Oliveira</h4>
+                                        <div class="estrelas">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>"Variedade top de whiskys e destilados. Sempre encontro o que procuro e o ambiente é o melhor da região. Virou meu lugar oficial."</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTATO ==================== -->
+        <section id="contato" class="section contato-wrapper glass-card reveal">
+            <h2>Chama o Magrão!</h2>
+            <p>Seu rolê tá pedindo. Clique no botão abaixo e faça seu pedido diretamente pelo WhatsApp. Rápido, fácil e sem frescura.</p>
+            <a href="https://wa.me/5535984499431" target="_blank" class="btn btn-primary">Pedir Agora <i class="fa-brands fa-whatsapp"></i></a>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer">
+        <div class="container">
+            <p>© 2025 Adega do Magrão. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://www.instagram.com/jordanlvs" target="_blank" class="dev-credit-link">@jordanlvs <i class="fa-solid fa-circle-check verified-badge"></i></a></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
