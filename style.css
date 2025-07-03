@@ -1,0 +1,429 @@
+/* --- RESET E VARIÁVEIS GLOBAIS (Design Adega do Magrão Final) --- */
+:root {
+    --dark-bg: #0a0a0f;
+    --glass-bg: rgba(25, 28, 45, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    --amarelo-adega: #FFD700;
+    --vermelho-brasa: #E52521;
+
+    --text-light: #F5F5F7;
+    --text-muted: #a0a0a0;
+    --azul-verificado: #007AFF;
+
+    --font-principal: 'Poppins', sans-serif;
+    --header-height: 5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- FUNDO 3D COM GARRAFAS FLUTUANTES (TÉCNICA CORRIGIDA) --- */
+.floating-bottles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bottle {
+    position: absolute;
+    filter: blur(4px); /* Desfoque sutil na garrafa */
+    opacity: 0.6; /* Opacidade da imagem da garrafa */
+    animation: float 25s infinite ease-in-out alternate;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Efeito de Aura/Glow atrás da garrafa */
+.bottle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%; /* Aura maior */
+    height: 200%;
+    background: radial-gradient(circle, var(--amarelo-adega), transparent 60%);
+    filter: blur(80px); /* Desfoque intenso na aura */
+    opacity: 0.5; /* Opacidade da aura */
+    z-index: -1;
+}
+
+.bottle-1 {
+    width: 200px;
+    height: 300px;
+    top: 5%;
+    left: -5%;
+    background-image: url('https://cdn.sistemawbuy.com.br/arquivos/a48e76d3b4ff8b6e919e194fd7dfcfed/produtos/641b34cb1a44a/jackdaniels-641b34cb557cd.png'); /* Jack Daniel's */
+    animation-duration: 28s;
+}
+
+.bottle-2 {
+    width: 180px;
+    height: 350px;
+    bottom: -10%;
+    right: -5%;
+    background-image: url('https://cdn.awsli.com.br/2500x2500/2649/2649600/produto/234522011/jw-gold-label-reserve---0-75l-x-6---sc-yaiacjjzqu.png'); /* Gold Label */
+    animation-duration: 32s;
+    animation-delay: -7s;
+}
+
+.bottle-3 {
+    width: 150px;
+    height: 220px;
+    top: 40%;
+    right: 10%;
+    background-image: url('https://cdn.sistemawbuy.com.br/arquivos/a48e76d3b4ff8b6e919e194fd7dfcfed/produtos/641b3843524d4/red-label-641b384398fcd.png');
+    opacity: 0.4;
+    animation-duration: 24s;
+    animation-delay: -12s;
+}
+
+/* Nova garrafa no canto inferior esquerdo */
+.bottle-4 {
+    width: 160px;
+    height: 300px;
+    bottom: 5%;
+    left: -2%;
+    background-image: url('https://superrissul.vtexassets.com/arquivos/ids/787082-800-auto?v=638856930797700000&width=800&height=auto&aspect=true');
+    opacity: 0.4;
+    animation-duration: 30s;
+    animation-delay: -15s;
+}
+
+/* Animação de flutuação mais complexa */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(-10deg); }
+    50% { transform: translateY(-30px) rotate(5deg) scale(1.05); }
+    100% { transform: translateY(20px) rotate(-5deg); }
+}
+
+
+/* --- ESTILOS GERAIS --- */
+.container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+}
+
+main.container > section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--amarelo-adega);
+}
+
+/* --- EFEITO GLASSMORPHISM --- */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* --- HEADER --- */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(13, 15, 24, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+#header nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--amarelo-adega);
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.menu {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.menu a {
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: var(--text-light);
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark-bg);
+    background: linear-gradient(90deg, var(--amarelo-adega), var(--vermelho-brasa));
+}
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 25px rgba(255, 215, 0, 0.2);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 4rem 2.5rem;
+    margin-top: calc(var(--header-height) + 2rem);
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+.hero .slogan {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--amarelo-adega);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+.hero .btn i {
+    margin-left: 0.5rem;
+}
+
+/* --- BEBIDAS E SERVIÇOS --- */
+.bebidas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.item-card {
+    padding: 2rem;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.card-header h3 {
+    font-size: 1.5rem;
+}
+.card-header i {
+    font-size: 1.8rem;
+    color: var(--amarelo-adega);
+}
+.item-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- QUEM SOMOS --- */
+.quemsomos-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2.5rem;
+}
+.quemsomos-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--glass-border);
+}
+.quemsomos-texto h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.quemsomos-texto .cargo {
+    color: var(--amarelo-adega);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.quemsomos-texto .descricao {
+    color: var(--text-muted);
+}
+
+/* --- FACHADA --- */
+.fachada-container {
+    padding: 0;
+}
+.fachada-card {
+    padding: 0;
+}
+.fachada-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+}
+.fachada-address {
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+.fachada-address i {
+    color: var(--amarelo-adega);
+    margin-right: 0.5rem;
+}
+
+/* --- AVALIAÇÕES --- */
+.avaliacao-card {
+    padding: 2rem;
+}
+.avaliacao-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.avaliacao-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.estrelas {
+    color: var(--amarelo-adega);
+}
+.avaliacao-card p {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* --- CONTATO --- */
+.contato-wrapper {
+    text-align: center;
+}
+.contato-wrapper h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.contato-wrapper p {
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- FOOTER --- */
+#footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 2rem;
+}
+#footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+#footer p:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+.dev-credit a {
+    color: var(--text-light);
+    font-weight: 600;
+    text-decoration: none;
+}
+.dev-credit .fa-circle-check {
+    color: var(--azul-verificado);
+    font-size: 0.9em;
+    margin-left: 4px;
+}
+
+/* --- ANIMAÇÕES --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.5s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .bebidas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .quemsomos-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .quemsomos-foto {
+        margin: 0 auto;
+    }
+}
